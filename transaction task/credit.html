@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Credit Account</title>
+        <style>
+            *{
+                margin: 0;
+                padding: 0;
+            }
+            body{
+                
+                text-align: center;
+            }
+            .credit{
+            text-align: center;         
+            color:black;
+            padding:30%;   
+            height:100px;
+            background-image: url(https://img.freepik.com/free-vector/indian-rupee-symbol-frame-background_1017-36441.jpg?t=st=1733219776~exp=1733223376~hmac=bdd9041986eee37b7207a8e4f7a78303abcf2f6771a832880b43ca2a0a6c652c&w=740);        
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            }
+        </style>
+          <script src="script.js"></script>
+    </head>
+<body>
+    <div class="credit">
+    <h1>Credit details</h1>
+    <form action="">
+        <input type="number" name="" id="crdtamt">
+        <input type="submit" name="" id="crdsub">
+    </form>
+    <br>
+    <a href="account.html"><button>checkbox</button></a>
+    <a href="index.html"><button>Home</button></a>
+   
+   
+    <script>
+        let accbls=5000
+        
+        document.getElementById('crdsub').addEventListener('click',function(){
+            let crdval=document.getElementById('crdtamt').value;
+            
+        let a=parseInt( crdval)
+            const crdres= accbls + a
+            alert(crdres)
+         
+            localStorage.setItem('currentbls',crdres)
+           
+        })
+        
+    </script>
+    </div>
+</body>
+</html>

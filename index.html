@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Animated Dashboard</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background-color: #2C3E50; /* Dark blue-grey background */
+      color: white;
+      font-family: 'Arial', sans-serif;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      animation: fadeIn 2s ease-out;
+    }
+
+    /* Add fade-in animation */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    .header {
+      text-align: center;
+      padding: 20px;
+      background-color: #34495E; /* Slightly lighter shade of blue-grey */
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+      margin-bottom: 40px;
+      animation: slideUp 1s ease-out;
+    }
+
+    @keyframes slideUp {
+      from {
+        transform: translateY(50px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    .header h1 {
+      font-size: 36px;
+      font-weight: 600;
+      color: #ECF0F1; /* Light grey for header text */
+    }
+
+    .dashboard-cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .card {
+      background-color: #2C3E50; /* Soft teal background for cards */
+      width: 300px;
+      border-radius: 15px;
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+      cursor: pointer;
+    }
+
+    .card:hover {
+      transform: translateY(-15px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+    }
+
+    .card h3 {
+      font-size: 24px;
+      padding: 20px;
+      text-align: center;
+      background-color:#2C3E50; /* Darker teal for card header */
+      margin-bottom: 0;
+      font-weight: 600;
+      color: #ECF0F1; /* Light grey text */
+    }
+
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .card img:hover {
+      transform: scale(1.05);
+    }
+
+    /* Responsive layout */
+    @media (max-width: 768px) {
+      .dashboard-cards {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .card {
+        width: 80%;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .card {
+        width: 90%;
+      }
+
+      .header h1 {
+        font-size: 28px;
+      }
+    }
+
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>Dashboard</h1>
+  </div>
+
+  <div class="dashboard-cards">
+    <div class="card">
+      <h3>Shopping</h3>
+      <a href="cards task/index2.html">
+        <img src="https://img.freepik.com/free-photo/small-grocery-cart-with-black-friday-sale-inscription_23-2147957597.jpg?t=st=1733377031~exp=1733380631~hmac=f7e94477a6b99b8c449feb3126b214649955633058c878ca1043618aace7d275&w=740" alt="Shopping">
+      </a>
+    </div>
+
+    <div class="card">
+      <h3>Banking</h3>
+      <a href="transaction task/index.html">
+        <img src="https://img.freepik.com/free-photo/euro-dollar-bills_176474-7144.jpg?t=st=1733377663~exp=1733381263~hmac=6b14e1f2dcbdaaa8b61fcfb09e4784675b6722fa73c174e94eadfa527687a3b3&w=740" alt="Banking">
+      </a>
+    </div>
+
+    <div class="card">
+      <h3>API Calling</h3>
+      <a href="Api calling/index1.html">
+        <img src="https://img.freepik.com/free-photo/hand-selecting-photo-virtual-screen_1134-606.jpg?t=st=1733378011~exp=1733381611~hmac=eeec603e4b3103064cc17c31255e17442b7ad722554a90d088d8f84de1519865&w=740" alt="API Calling">
+      </a>
+    </div>
+  </div>
+</body>
+</html>

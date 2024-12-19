@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        .header{
+            color:white;
+            background-color: black;
+            padding:2%;
+            text-align: center;
+        }
+        #main{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content:space-around;
+            align-items: center;
+            background-color:burlywood;
+            
+        }
+        .items:hover{
+            transform: translateY(25px);
+        }
+        .items{
+            margin: 2%;
+            background-color:black;
+            color:aliceblue;
+            padding: 2%;
+            height: 350px;
+            width: 250px;
+        }
+       
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Dashboard</h1>
+    </div>
+    <div id="main">
+       
+    </div>
+    <script>
+        async function getData(){
+            const url = await fetch('https://dummyjson.com/users');
+            let data = await url.json()
+            let myData = data.users
+            console.log(myData)
+
+            let Myproducts = myData.map((e)=>{
+                return(
+                    `
+                    <div class="items">
+          
+                     
+                    
+                    <p>id:${e.id}</p>    
+                    <p>firstName:${e.firstName}</p>    
+                    <p>lastName:${e.lastName}</p>    
+                     <p>age:${e.age}</p>  
+                     <p>gender:${e.gender}</p> 
+                     <p>phone:${e.phone}</p>   
+                    </div>
+                    `
+                )
+            }).join("")
+            document.getElementById('main').innerHTML=Myproducts
+        }getData()
+    </script>
+</body>
+</html>
